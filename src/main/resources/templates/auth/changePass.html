@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Change your password</title>
+</head>
+<body>
+<form th:action="@{/auth/changePass/{code}(code = ${user.getActivationCode()})}" th:method="POST" th:object="${user}">
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" th:field="*{password}">
+    <br>
+    <input type="submit" value="Change password!">
+</form>
+</body>
+</html>

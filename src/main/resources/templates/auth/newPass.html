@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New password</title>
+</head>
+<body>
+<div th:if="${message}">
+  <p th:text="${message}">some message</p>
+</div>
+<br>
+<form th:action="@{/auth/newPass}" th:method="POST">
+  <label for="code">Enter code:</label>
+  <input type="text" id="code" name="code" placeholder="1234">
+  <br>
+  <input type="submit" value="Check!">
+</form>
+</body>
+</html>

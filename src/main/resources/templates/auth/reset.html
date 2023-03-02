@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Reset password</title>
+</head>
+<body>
+<div th:if="${message}">
+    <p th:text="${message}">some message</p>
+</div>
+<br>
+<form th:action="@{/auth/resetPass}" th:method="POST" th:object="${user}">
+    <label for="name">name:</label>
+    <input type="text" id="name" name="name" placeholder="Margulan" th:field="*{name}">
+    <br>
+    <label for="number">Number:</label>
+    <input type="text" id="number" name="number" placeholder="77771234567" th:field="*{number}">
+    <br>
+    <input type="submit" value="Send me code!">
+</form>
+<br>
+</body>
+</html>
